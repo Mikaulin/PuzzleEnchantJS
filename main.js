@@ -8,8 +8,12 @@ var dMusic = "music/";
 var physicsWorld;
 
 /*Sprites*/
-var setBoxes = dImages + 'testObject.png';
+var setBoxes = dImages + 'blocksObject.png';
 var groundPixel = dImages + 'groundPix.png';
+
+/*Sounds*/
+var fxBoxContact = dMusic + 'FX053.mp3';
+var fxBoxClick = dMusic + 'boxClick.wav';
 
 /*Sizes*/
 var wGame = 320;
@@ -22,7 +26,7 @@ var scene;
 window.onload = function () {
 	game = new Game(wGame, hGame);
 	game.score = 0;
-	game.preload(setBoxes, groundPixel);
+	game.preload(setBoxes, groundPixel, fxBoxContact, fxBoxClick);
 
     game.multiplier = 1;
     game.lastChainTime = 0;
@@ -126,13 +130,23 @@ var Box = enchant.Class.create(enchant.Sprite, {
         });
         //Eliminamos cuando tocamos la caja
         this.addEventListener('touchstart', function () {
-            this.remove();
+            this.remove(1);
             
         });
         scene.addChild(this);
 
     },
-    remove: function () {
+    remove: function (deleteType) {
+        if (deleteType == "1") {
+            //Sonido de contacto entre dos cajas
+            game.assets[fxBoxClick].play();
+        }
+        else
+        {
+            //Sonido de contacto entre dos cajas
+            game.assets[fxBoxContact].play();
+        }
+        
         //En la posicion a eliminar b elementos
         arBoxes.splice(this.arrPosition, 1);
         //Hay que actualizar las posiciones de los elementos del array
