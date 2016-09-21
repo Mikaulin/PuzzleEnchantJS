@@ -4,7 +4,7 @@
  * @version 0.2.2
  * @require enchant.js v0.6.3+
  * @require gl.enchant.js v0.3.7+
- * @author Ubiquitous Entertainment Inc.
+ * @author UEI Corporation
  *
  * @description
  * Plugin to allow use of MikuMikuDance PMD and VMD files in gl.enchant.js.
@@ -732,6 +732,7 @@ var MMD = {};
         stride: 0,
         offset: 0,
         btype: 34962,
+        usage: 35044,
         Atype: Float32Array
     };
     bufferProto.EDGES = {
@@ -741,6 +742,7 @@ var MMD = {};
         stride: 0,
         offset: 0,
         btype: 34962,
+        usage: 35044,
         Atype: Uint16Array
     };
 

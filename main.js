@@ -8,7 +8,7 @@ var dMusic = "music/";
 var physicsWorld;
 
 /*Sprites*/
-var setBoxes = dImages + 'blocksObject.png';
+var setBoxes = dImages + 'blocks.png';
 var groundPixel = dImages + 'groundPix.png';
 
 /*Sounds*/
@@ -44,7 +44,7 @@ window.onload = function () {
             //physicsWorld.step(game.fps);
 	        });	
         //var b = new PhyBox(150, 2, game.rootScene);
-        var b = new Box(160, 2);
+        var b = new Box(192, 2);
         //addGround();
 
         //DEBUG
@@ -55,7 +55,7 @@ window.onload = function () {
             //var b = new PhyBox(150, 2, game.rootScene);
             var posGrid = wGame / wBox;
             var posBox = rand(posGrid);
-            var b = new Box(posBox*wBox, rand(5));
+            var b = new Box(posBox*wBox, rand(6));
             //test
             //var b = new Box(160, rand(5));
         });

@@ -6,7 +6,7 @@
  * @require gl.enchant.js v0.3.6+
  * @require primitive.gl.enchant.js v0.3.5+
  * @require gl-matrix.js 1.3.7+
- * @author Ubiquitous Entertainment Inc.
+ * @author UEI Corporation
  *
  * @description
  * Physical calculation library using ammo.js
@@ -607,7 +607,6 @@ if (enchant.gl !== undefined && enchant.gl.primitive !== undefined) {
             /**
              * Begin World time progress.
              * Ever other enterframe, stepSimulation will be automaticall called up.
-             *
              */
             play: function() {
                 var core = enchant.Core.instance;

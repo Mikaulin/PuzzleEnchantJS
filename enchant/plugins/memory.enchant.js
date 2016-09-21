@@ -4,7 +4,7 @@
  * @version 0.2.3 (2013/04/3)
  * @requires enchant.js v0.6.0 or later
  * @requires nineleap.enchant.js v0.2.2 or later
- * @author Ubiquitous Entertainment Inc.
+ * @author UEI Corporation
  *
  * @description
  * enchant.js extention for 9leap.net
@@ -664,7 +664,8 @@
             this._user_memory_key = "game_" + game_id + "_user_";
         },
         get_user_memory: function(key) {
-            var ret = JSON.parse(localStorage.getItem(this._user_memory_key + key));
+            var value = localStorage.getItem(this._user_memory_key + key);
+            var ret = value ? JSON.parse(value) : null;
             if (ret == null) return {'data': {}};
             ret.toSprite = function(width, height) {
                 if (arguments.length < 2) {
